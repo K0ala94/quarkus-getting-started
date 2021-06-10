@@ -1,5 +1,6 @@
-package gergo.quarkus.getting.started;
+package gergo.quarkus.getting.started.endpoints;
 
+import gergo.quarkus.getting.started.business.CatService;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 import javax.inject.Inject;
@@ -17,7 +18,7 @@ public class CatsEndpoint {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return catService.lisCats().toString();
+        return catService.listCats().toString();
     }
 
     @Produces(MediaType.TEXT_PLAIN)
