@@ -1,6 +1,6 @@
 mvn io.quarkus:quarkus-maven-plugin:1.13.4.Final:create "-DprojectGroupId=gergo.quarkus" "-DprojectArtifactId=getting-started" "-DclassName=gergo.quarkus.getting.started.endpoints.CatsEndpoint" "-Dpath="/cats"
 
-
+Native-tools command prompt-bol kell futtatni:
 mvn package -Pnative "-Dquarkus.native.container-build=true" "-Dquarkus.container-image.build=true" "-Dquarkus.container-image.image=docker.io/koala944/quakus-start:latest" "-Dquarkus.container-image.push=true"
 
 oc create deployment quarkus-start --image=koala944/quakus-start:latest --dry-run=client -o yaml > ./src/main/openshift/deployment.yml
